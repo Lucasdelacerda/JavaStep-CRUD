@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.Scrimet</groupId>
-    <artifactId>estudoCrud</artifactId>
+    <artifactId>JavaStep-CRUD</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>estudoCrud</name>
-    <description>estudo do CRUD</description>
+    <name>JavaStep-CRUD</name>
+    <description></description>
     <url/>
     <licenses>
         <license/>
