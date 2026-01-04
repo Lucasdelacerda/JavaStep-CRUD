@@ -1,4 +1,4 @@
-package com.Scrimet.estudoCrud.infrastructure.entitys;
+package com.Scrimet.JavaStep.entitys;
 
 
 import jakarta.persistence.*;

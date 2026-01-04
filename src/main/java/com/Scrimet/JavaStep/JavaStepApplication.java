@@ -1,4 +1,4 @@
-package com.Scrimet.estudoCrud;
+package com.Scrimet.JavaStep;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
