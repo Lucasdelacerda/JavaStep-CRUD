@@ -1,4 +1,4 @@
-package com.Scrimet.estudoCrud;
+package com.Scrimet.JavaStep;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
