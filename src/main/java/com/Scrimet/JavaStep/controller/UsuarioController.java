@@ -1,6 +1,6 @@
 package com.Scrimet.JavaStep.controller;
 
-import com.Scrimet.JavaStep.business.UsuarioService;
+import com.Scrimet.JavaStep.service.UsuarioService;
 import com.Scrimet.JavaStep.entitys.Usuario;
 import com.Scrimet.JavaStep.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
