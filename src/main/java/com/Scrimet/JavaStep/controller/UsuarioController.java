@@ -3,6 +3,7 @@ package com.Scrimet.JavaStep.controller;
 import com.Scrimet.JavaStep.service.UsuarioService;
 import com.Scrimet.JavaStep.entitys.Usuario;
 import com.Scrimet.JavaStep.repository.UsuarioRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class UsuarioController {
     private final UsuarioRepository repository;
 
     @PostMapping
-    public ResponseEntity<Void> salvarUsuario(@RequestBody Usuario usuario) {
+    public ResponseEntity<Void> salvarUsuario(@Valid @RequestBody Usuario usuario) {
         usuarioService.salvarUsuario(usuario);
         return ResponseEntity.ok().build();
     }
@@ -29,24 +30,14 @@ public List<Usuario> listarTodos(){
         return repository.findAll();
 }
 
-    @GetMapping("/email/{email}")
+    @GetMapping("/{email}")
     public ResponseEntity<Usuario> buscarUsuarioPorEmail(@RequestParam String email) {
         return ResponseEntity.ok(usuarioService.buscarUsuarioPorEmail(email));
     }
 
-    @GetMapping("/nome/{nome}")
-    public ResponseEntity<Usuario> bucarUsuarioPorNome(@PathVariable String nome){
-        return ResponseEntity.ok(usuarioService.bucarUsuarioPorNome(nome));
-    }
-    @DeleteMapping("/email/{email}")
-    public ResponseEntity<Void> deletarUsuarioPorEmail(@PathVariable String email) {
-        usuarioService.deletarUsuarioPorEmail(email);
-        return ResponseEntity.ok().build();
-    }
-
-    @PutMapping("/id/{id}")
-    public ResponseEntity<Void> atualizarUsuarioPorId(@PathVariable Integer id, @RequestBody Usuario usuario) {
-        usuarioService.atualizarUsuarioPorId(id, usuario);
-        return ResponseEntity.ok().build();
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarUsuarioPorId(@PathVariable String id) {
+        usuarioService.deletarUsuarioPorId(id);
+        return ResponseEntity.noContent().build();
     }
 }

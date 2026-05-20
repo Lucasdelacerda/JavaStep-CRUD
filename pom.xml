@@ -12,7 +12,7 @@
     <artifactId>JavaStep-CRUD</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>JavaStep-CRUD</name>
-    <description></description>
+
     <url/>
     <licenses>
         <license/>
@@ -42,6 +42,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>

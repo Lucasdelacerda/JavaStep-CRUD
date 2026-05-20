@@ -32,17 +32,16 @@ public class UsuarioService {
         );
     }
 
-    public Usuario bucarUsuarioPorNome(String nome){
-        return repository.findByNome(nome).orElseThrow(
-                () -> new RuntimeException("Usuário não encontrado")
-        );
-    }
- //caso seja um metodo padrão do controller ele vem parar aqui, se não for padrão ele passa pelo repository
-    public void deletarUsuarioPorEmail(String email) {
-        repository.deleteByEmail(email);
+
+
+    public void deletarUsuarioPorId(String id) {
+        if (!repository.existsById(id)){
+            throw new RuntimeException("Usuário não encontrado" + id);
+        }
+        repository.deleteById(id);
     }
 
-    public void atualizarUsuarioPorId(Integer id, Usuario usuario) {
+    public void atualizarUsuarioPorId(String id, Usuario usuario) {
         Usuario usuarioEntity = repository.findById(id).orElseThrow(() ->
                 new RuntimeException("usuário não encontrado"));
         Usuario usuarioAtualizado = Usuario.builder()

@@ -6,10 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+public interface UsuarioRepository extends JpaRepository<Usuario, String> {
 
     Optional<Usuario> findByEmail(String Email);
-    Optional<Usuario> findByNome(String nome);
-    @Transactional
-    void deleteByEmail(String email);
 }
